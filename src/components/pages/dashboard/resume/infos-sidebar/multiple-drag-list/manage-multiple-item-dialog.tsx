@@ -240,7 +240,25 @@ export const ManageMultipleItemDialog = ({
   setOpen,
   initialData,
 }: ManageMultipleItemDialogProps) => {
-  const methods = useForm();
+  const methods = useForm({
+    defaultValues: {
+      name: "",
+      username: "",
+      url: "",
+      icon: "",
+      company: "",
+      position: "",
+      date: "",
+      location: "",
+      website: "",
+      summary: "",
+      degree: "",
+      institution: "",
+      description: "",
+      level: 0,
+      keywords: "",
+    },
+  });
   const { setValue, getValues } = useFormContext<ResumeData>();
 
   const isEditing = !!initialData;
